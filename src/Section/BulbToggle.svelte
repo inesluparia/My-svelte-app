@@ -2,16 +2,17 @@
     let isOn = false;
 
     function toggleLight() {
-        //IT DOESN'T WORK WITH isOn = false
-        isOn = !isOn
-        console.log(isOn)
         if (isOn) {
             document.getElementById("bulb").src = 
-                "../images/light-bulb-on.jpg";
+            "../images/light-bulb-off.jpg";
         } else {
             document.getElementById("bulb").src =
-                "../images/light-bulb-off.jpg";
+            "../images/light-bulb-on.jpg";
         }
+        isOn = !isOn
+        //NOT UPDATING dom WITH isOn = false
+        //cause its mutating instead of reassigning
+        //aNd svelte is rective based on ASSIGNMENT
     }
 </script>
 

@@ -1,5 +1,5 @@
 <script>
-    import { fade, fly } from "svelte/transition";
+    import { fade } from "svelte/transition";
 
     let rando = 0;
     
@@ -19,9 +19,8 @@
     <button on:click={setRando}>Get a random number</button>
 
     <p
+        transition:fade
         id="result"
-        in:fly={{ x: 1000, dureation: 500 }}
-        out:fly={{ x: -500, dureation: 500 }}
     >
         {result.toUpperCase()}
     </p>
